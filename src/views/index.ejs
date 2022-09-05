@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/app.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>REGISTRARSE</h1>
+      <form method="POST" action="">
+        <div class="form-control">
+          <input type="text" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : null %>" />
+          <label>Nombre</label>
+		  <p class="form_error"><%= locals.errors && errors.first_name ? errors.first_name.msg : null%></p>
+        </div>
+        <div class="form-control">
+          <input type="text" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : null %>" />
+          <label>Apellido</label>
+		  <p class="form_error"><%= locals.errors && errors.last_name ? errors.last_name.msg : null%></p>
+        </div>
+        <div class="form-control">
+          <input type="email" name="email" value="<%= locals.old && old.email ? old.email : null %>" />
+          <label>Email</label>
+		  <p class="form_error"><%= locals.errors && errors.email ? errors.email.msg : null%></p>
+        </div>
+
+        <div class="form-control">
+          <input type="password" name="password"  />
+          <label>Password</label>
+		  <p class="form_error"><%= locals.errors && errors.password ? errors.password.msg : null%></p>
+        </div>
+
+        <button type="submit" class="btn">Enviar</button>
+        <p class="text">Ya tienes cuenta? <a href="#">Ingresa</a></p>
+      </form>
+    </div>
+	<script src="/js/login.js"></script>
+  </body>
+</html>
